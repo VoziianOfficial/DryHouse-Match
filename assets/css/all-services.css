@@ -1098,3 +1098,409 @@
     }
 }
 
+/* ==================================================
+   MOBILE FIX: ISSUE SELECTOR COMPACT BEAUTIFUL LAYOUT
+================================================== */
+
+@media (max-width: 720px) {
+    .issue-selector {
+        padding-top: 42px;
+        padding-bottom: 48px;
+        background: #f5f8fc;
+        overflow: hidden;
+    }
+
+    .issue-selector__head {
+        max-width: 520px;
+        margin: 0 auto 20px;
+        text-align: center;
+    }
+
+    .issue-selector__head .section-title {
+        max-width: 430px;
+        margin-inline: auto;
+        font-size: clamp(2rem, 9vw, 3rem);
+        line-height: 0.98;
+    }
+
+    .issue-selector__grid {
+        display: block;
+        max-width: 540px;
+        margin-inline: auto;
+    }
+
+    /* фото короткое и широкое */
+    .issue-selector__visual {
+        display: block;
+        width: 100%;
+        margin: 0;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+    }
+
+    .issue-selector__photo {
+        width: 100%;
+        height: 220px;
+        min-height: 0;
+        overflow: hidden;
+        border-radius: 26px;
+        box-shadow: 0 18px 44px rgba(11, 11, 13, 0.12);
+    }
+
+    .issue-selector__photo::after {
+        background:
+            linear-gradient(180deg, rgba(11, 11, 13, 0.02), rgba(11, 11, 13, 0.28)),
+            linear-gradient(120deg, rgba(7, 58, 100, 0.22), transparent 46%);
+    }
+
+    /* правая часть становится общей колонкой под фото */
+    .issue-selector__side {
+        position: relative;
+        z-index: 4;
+        display: grid;
+        gap: 14px;
+        width: calc(100% - 22px);
+        margin: -34px auto 0;
+    }
+
+    /* выбранный текст — компактная плашка поверх фото */
+    .issue-selector__caption {
+        display: grid;
+        justify-items: center;
+        gap: 7px;
+        padding: 18px 18px 16px;
+        text-align: center;
+        background: var(--color-white);
+        border: 1px solid rgba(11, 11, 13, 0.1);
+        border-bottom: 3px solid var(--color-blue);
+        border-radius: 22px;
+        box-shadow: 0 18px 48px rgba(11, 11, 13, 0.12);
+    }
+
+    .issue-selector__caption h3 {
+        max-width: 100%;
+        margin: 0;
+        font-size: clamp(1.45rem, 7vw, 2.15rem);
+        line-height: 1;
+        letter-spacing: -0.065em;
+        text-align: center;
+    }
+
+    .issue-selector__caption p {
+        display: -webkit-box;
+        max-width: 430px;
+        margin: 0;
+        overflow: hidden;
+        color: var(--color-muted);
+        font-size: 0.86rem;
+        line-height: 1.42;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .issue-selector__caption .btn,
+    .issue-selector__caption .btn.btn--primary {
+        margin-top: 2px;
+        font-size: 0.78rem;
+    }
+
+    /* карточки компактными плитками 2 в ряд */
+    .issue-selector__cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
+    .issue-card {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-content: start;
+        gap: 7px;
+        min-height: 116px;
+        padding: 14px 10px 15px;
+        text-align: center;
+        border-radius: 18px;
+        border-bottom-width: 3px;
+        background: var(--color-white);
+        box-shadow: 0 12px 30px rgba(11, 11, 13, 0.055);
+    }
+
+    .issue-card::after {
+        left: 50%;
+        bottom: 9px;
+        width: 34px;
+        height: 2px;
+        transform: translateX(-50%);
+    }
+
+    .issue-card:hover,
+    .issue-card.is-active {
+        transform: translateY(-3px);
+    }
+
+    .issue-card:hover::after,
+    .issue-card.is-active::after {
+        width: 64px;
+    }
+
+    .issue-card i,
+    .issue-card svg {
+        width: 30px;
+        height: 30px;
+        margin: 0;
+    }
+
+    .issue-card strong {
+        margin-bottom: 3px;
+        font-size: 0.88rem;
+        line-height: 1.05;
+    }
+
+    .issue-card small {
+        max-width: 130px;
+        margin-inline: auto;
+        font-size: 0.72rem;
+        line-height: 1.25;
+    }
+}
+
+@media (max-width: 430px) {
+    .issue-selector {
+        padding-top: 36px;
+        padding-bottom: 42px;
+    }
+
+    .issue-selector__head {
+        margin-bottom: 16px;
+    }
+
+    .issue-selector__photo {
+        height: 190px;
+        border-radius: 22px;
+    }
+
+    .issue-selector__side {
+        width: calc(100% - 16px);
+        margin-top: -28px;
+        gap: 10px;
+    }
+
+    .issue-selector__caption {
+        padding: 16px 14px 14px;
+        border-radius: 20px;
+    }
+
+    .issue-selector__caption h3 {
+        font-size: clamp(1.35rem, 8vw, 1.85rem);
+    }
+
+    .issue-selector__caption p {
+        font-size: 0.8rem;
+        -webkit-line-clamp: 2;
+    }
+
+    .issue-selector__cards {
+        gap: 8px;
+    }
+
+    .issue-card {
+        min-height: 92px;
+        padding: 12px 8px 14px;
+        border-radius: 16px;
+    }
+
+    .issue-card i,
+    .issue-card svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .issue-card strong {
+        font-size: 0.8rem;
+    }
+
+    .issue-card small {
+        display: none;
+    }
+}
+
+/* ==================================================
+   FIX: ISSUE SELECTOR MOBILE PHOTO INSIDE CONTAINER
+================================================== */
+
+@media (max-width: 720px) {
+    .issue-selector .container-wide {
+        overflow: hidden;
+    }
+
+    .issue-selector__grid {
+        width: 100%;
+        max-width: min(540px, calc(100vw - 32px));
+        margin-inline: auto;
+        overflow: visible;
+    }
+
+    .issue-selector__visual {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .issue-selector__photo {
+        width: 100%;
+        max-width: 100%;
+        height: 220px;
+        margin: 0;
+        box-sizing: border-box;
+        overflow: hidden;
+        border-radius: 24px;
+    }
+
+    .issue-selector__photo img {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .issue-selector__side {
+        width: calc(100% - 18px);
+        max-width: calc(100% - 18px);
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 430px) {
+    .issue-selector__grid {
+        max-width: calc(100vw - 24px);
+    }
+
+    .issue-selector__photo {
+        height: 190px;
+        border-radius: 22px;
+    }
+
+    .issue-selector__side {
+        width: calc(100% - 12px);
+        max-width: calc(100% - 12px);
+    }
+}
+
+/* ==================================================
+   FIX: SERVICES INTRO PHOTOS INSIDE CONTAINER
+================================================== */
+
+.services-intro {
+    overflow: hidden;
+}
+
+.services-intro__main,
+.services-intro__photos,
+.services-intro__photo {
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.services-intro__photos {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+.services-intro__photo {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.services-intro__photo img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* tablet */
+@media (max-width: 1180px) {
+    .services-intro__main {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .services-intro__photos {
+        width: 100%;
+        max-width: min(860px, 100%);
+        margin-inline: auto;
+        padding-inline: 0;
+        gap: 12px;
+    }
+
+    .services-intro__photo {
+        height: 430px;
+        border-radius: 28px;
+    }
+
+    /* если фото выезжает именно из-за AOS fade-left */
+    .services-intro__photos[data-aos] {
+        transform: none !important;
+    }
+}
+
+/* mobile */
+@media (max-width: 720px) {
+    .services-intro__photos {
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: min(520px, 100%);
+        gap: 12px;
+    }
+
+    .services-intro__photo,
+    .services-intro__photo:nth-child(2) {
+        width: 100%;
+        max-width: 100%;
+        height: 260px;
+        transform: none;
+        border-radius: 24px;
+    }
+}
+
+@media (max-width: 460px) {
+    .services-intro__photos {
+        max-width: 100%;
+    }
+
+    .services-intro__photo,
+    .services-intro__photo:nth-child(2) {
+        height: 230px;
+    }
+}
+
+/* ==================================================
+   FIX: SERVICES INTRO PHOTOS SAME LEVEL ON TABLET
+================================================== */
+
+@media (min-width: 721px) and (max-width: 1180px) {
+    .services-intro__photo:nth-child(2) {
+        transform: none !important;
+    }
+
+    .services-intro__photos {
+        align-items: stretch;
+    }
+
+    .services-intro__photo {
+        height: 430px;
+    }
+}
