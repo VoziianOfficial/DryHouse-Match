@@ -407,23 +407,278 @@
     };
 
     const injectConfigValues = () => {
-        qsa('[data-config]').forEach((element) => {
-            const path = element.dataset.config;
-            element.textContent = getValue(path, element.textContent);
-        });
+        const replacementGroups = [
+            {
+                path: 'brand.name',
+                aliases: [
+                    'DryHouse Match'
+                ]
+            },
+            {
+                path: 'company.name',
+                aliases: [
+                    'DryHouse Match'
+                ]
+            },
+            {
+                path: 'company.legalName',
+                aliases: [
+                    'DryHouse Match'
+                ]
+            },
+            {
+                path: 'company.companyId',
+                aliases: [
+                    'DHM-WD-2026'
+                ]
+            },
+            {
+                path: 'company.address',
+                aliases: [
+                    'USA Service Area'
+                ]
+            },
+            {
+                path: 'company.serviceArea',
+                aliases: [
+                    'Independent provider matching across selected service areas'
+                ]
+            },
+            {
+                path: 'contact.phoneDisplay',
+                aliases: [
+                    '(888) 555-0194',
+                    '888-555-0194',
+                    '888 555 0194'
+                ]
+            },
+            {
+                path: 'contact.phoneRaw',
+                aliases: [
+                    '+18885550194',
+                    '18885550194'
+                ]
+            },
+            {
+                path: 'contact.email',
+                aliases: [
+                    'support@dryhousematch.com'
+                ]
+            },
+            {
+                path: 'contact.supportHours',
+                aliases: [
+                    'Request access available 24/7'
+                ]
+            },
+            {
+                path: 'contact.phoneButtonText',
+                aliases: [
+                    'Start Request'
+                ]
+            },
+            {
+                path: 'footer.description',
+                aliases: [
+                    'DryHouse Match is an independent provider-matching platform that helps homeowners submit water-damage request details and compare available local provider options.'
+                ]
+            },
+            {
+                path: 'footer.copyright',
+                aliases: [
+                    '© 2026 DryHouse Match. All rights reserved.'
+                ]
+            },
+            {
+                path: 'footer.shortDisclaimer',
+                aliases: [
+                    'DryHouse Match is not a contractor, restoration company, plumbing company, inspection company, insurer, or direct service provider.'
+                ]
+            },
+            {
+                path: 'legal.disclaimer',
+                aliases: [
+                    'Disclaimer: This site is a free service to assist homeowners in connecting with local service providers. All contractors/providers are independent and this site does not warrant or guarantee any work performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the necessary license and insurance required for the work being performed. All persons depicted in a photo or video are actors or models and not contractors listed on this site.'
+                ]
+            }
+        ];
 
-        qsa('[data-config-href]').forEach((element) => {
-            const path = element.dataset.configHref;
-            element.setAttribute('href', getValue(path, element.getAttribute('href') || '#'));
-        });
+        const replacementPairs = replacementGroups
+            .map((group) => {
+                const newValue = getValue(group.path, '');
 
-        qsa('[data-phone-link]').forEach((element) => {
-            element.setAttribute('href', telHref());
-        });
+                return (group.aliases || [])
+                    .filter((oldValue) => oldValue && newValue && oldValue !== newValue)
+                    .map((oldValue) => ({
+                        oldValue: String(oldValue),
+                        newValue: String(newValue)
+                    }));
+            })
+            .flat()
+            .sort((a, b) => b.oldValue.length - a.oldValue.length);
 
-        qsa('[data-email-link]').forEach((element) => {
-            element.setAttribute('href', mailHref());
-        });
+        const replaceText = (value = '') => {
+            let nextValue = String(value);
+
+            replacementPairs.forEach(({ oldValue, newValue }) => {
+                nextValue = nextValue.split(oldValue).join(newValue);
+            });
+
+            return nextValue;
+        };
+
+        const shouldSkipTextNode = (node) => {
+            const parent = node.parentElement;
+
+            if (!parent) return true;
+
+            return Boolean(parent.closest(`
+            script,
+            style,
+            noscript,
+            template,
+            svg,
+            canvas,
+            input,
+            textarea,
+            select
+        `));
+        };
+
+        const replaceTextNodes = (root = document.body) => {
+            if (!root) return;
+
+            const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+                acceptNode(node) {
+                    if (!node.nodeValue || !node.nodeValue.trim()) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+
+                    if (shouldSkipTextNode(node)) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            });
+
+            const nodes = [];
+
+            while (walker.nextNode()) {
+                nodes.push(walker.currentNode);
+            }
+
+            nodes.forEach((node) => {
+                const nextValue = replaceText(node.nodeValue);
+
+                if (nextValue !== node.nodeValue) {
+                    node.nodeValue = nextValue;
+                }
+            });
+        };
+
+        const replaceAttributes = () => {
+            const attributesToReplace = [
+                'title',
+                'alt',
+                'aria-label',
+                'placeholder',
+                'content'
+            ];
+
+            qsa('[title], [alt], [aria-label], [placeholder], meta[content]').forEach((element) => {
+                attributesToReplace.forEach((attribute) => {
+                    if (!element.hasAttribute(attribute)) return;
+
+                    const currentValue = element.getAttribute(attribute);
+                    const nextValue = replaceText(currentValue);
+
+                    if (nextValue !== currentValue) {
+                        element.setAttribute(attribute, nextValue);
+                    }
+                });
+            });
+        };
+
+        const replaceHeadContent = () => {
+            if (document.title) {
+                document.title = replaceText(document.title);
+            }
+
+            qsa('script[type="application/ld+json"]').forEach((script) => {
+                if (!script.textContent) return;
+
+                const nextValue = replaceText(script.textContent);
+
+                if (nextValue !== script.textContent) {
+                    script.textContent = nextValue;
+                }
+            });
+        };
+
+        const injectExactConfigElements = () => {
+            qsa('[data-config]').forEach((element) => {
+                const path = element.dataset.config;
+                element.textContent = getValue(path, element.textContent);
+            });
+
+            qsa('[data-config-html]').forEach((element) => {
+                const path = element.dataset.configHtml;
+                element.innerHTML = escapeHtml(getValue(path, element.innerHTML));
+            });
+
+            qsa('[data-config-href]').forEach((element) => {
+                const path = element.dataset.configHref;
+                element.setAttribute('href', getValue(path, element.getAttribute('href') || '#'));
+            });
+
+            qsa('[data-config-src]').forEach((element) => {
+                const path = element.dataset.configSrc;
+                element.setAttribute('src', getValue(path, element.getAttribute('src') || ''));
+            });
+
+            qsa('[data-config-alt]').forEach((element) => {
+                const path = element.dataset.configAlt;
+                element.setAttribute('alt', getValue(path, element.getAttribute('alt') || ''));
+            });
+        };
+
+        const updateContactLinks = () => {
+            qsa('[data-phone-link], a[href^="tel:"]').forEach((element) => {
+                element.setAttribute('href', telHref());
+            });
+
+            qsa('[data-email-link], a[href^="mailto:"]').forEach((element) => {
+                element.setAttribute('href', mailHref());
+            });
+        };
+
+        const updateForms = () => {
+            qsa('form[data-contact-form]').forEach((form) => {
+                if (getValue('form.endpoint')) {
+                    form.setAttribute('action', getValue('form.endpoint'));
+                }
+            });
+
+            qsa('input[name="recipient"]').forEach((input) => {
+                input.value = getValue('form.recipient', input.value);
+            });
+
+            qsa('.checkbox-field__text').forEach((element) => {
+                const consentText = getValue('form.consentText');
+
+                if (consentText) {
+                    element.textContent = consentText;
+                }
+            });
+        };
+
+        injectExactConfigElements();
+        replaceTextNodes(document.body);
+        replaceAttributes();
+        replaceHeadContent();
+        updateContactLinks();
+        updateForms();
     };
 
     const injectServiceOptions = () => {
@@ -750,6 +1005,7 @@
         initGenericAccordions,
         initCounters,
         refreshDynamicHeights,
+        injectConfigValues,
         injectServiceOptions
     };
 
