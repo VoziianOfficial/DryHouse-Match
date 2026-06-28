@@ -71,7 +71,7 @@ window.SiteConfig = {
             title: 'Burst Pipe Damage',
             shortTitle: 'Burst Pipe',
             file: 'burst-pipe-damage.html',
-            icon: 'pipe',
+            icon: 'wrench',
             image: 'assets/images/service-3.jpg',
             heroImage: 'assets/images/hero-burst-pipe.jpg',
             description: 'For sudden pipe-related water damage, frozen pipe incidents, broken supply lines, wall or ceiling saturation, and fast-spreading water concerns.',
