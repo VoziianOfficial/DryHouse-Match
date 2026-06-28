@@ -636,3 +636,159 @@
         min-height: 250px;
     }
 }
+
+
+/* ==================================================
+   ABOUT ICON MARQUEE
+================================================== */
+
+.about-icon-marquee {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    min-height: clamp(190px, 24vw, 290px);
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 8% 14%, rgba(99, 199, 255, 0.22), transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(217, 43, 43, 0.16), transparent 34%),
+        #073A64;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-icon-marquee::before,
+.about-icon-marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    width: 140px;
+    height: 100%;
+    pointer-events: none;
+}
+
+.about-icon-marquee::before {
+    left: 0;
+    background: none;
+}
+
+.about-icon-marquee::after {
+    right: 0;
+    background: none;
+}
+
+.about-icon-marquee__track {
+    display: flex;
+    width: max-content;
+    animation: aboutIconMarquee 28s linear infinite;
+}
+
+.about-icon-marquee:hover .about-icon-marquee__track {
+    animation-play-state: paused;
+}
+
+.about-icon-marquee__group {
+    display: flex;
+    align-items: center;
+    gap: clamp(22px, 3vw, 42px);
+    padding-inline: clamp(18px, 3vw, 42px);
+}
+
+.about-icon-marquee__group span {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: clamp(108px, 11vw, 164px);
+    height: clamp(108px, 11vw, 164px);
+    color: var(--color-blue-light);
+    border: 1px solid rgba(99, 199, 255, 0.32);
+    border-bottom: 4px solid var(--color-red);
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.045);
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition);
+}
+
+.about-icon-marquee__group span:nth-child(2n) {
+    color: var(--color-red-light);
+    border-color: rgba(217, 43, 43, 0.34);
+    border-bottom-color: var(--color-blue-light);
+}
+
+.about-icon-marquee__group span:nth-child(3n) {
+    color: var(--color-white);
+}
+
+.about-icon-marquee__group span:hover {
+    z-index: 4;
+    color: var(--color-white);
+    background: rgba(24, 155, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.55);
+    transform: translateY(-10px) scale(1.06) rotate(-3deg);
+}
+
+.about-icon-marquee__group i,
+.about-icon-marquee__group svg {
+    width: clamp(58px, 6vw, 94px);
+    height: clamp(58px, 6vw, 94px);
+    stroke-width: 1.25;
+    filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.34));
+}
+
+@keyframes aboutIconMarquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 720px) {
+    .about-icon-marquee {
+        min-height: 170px;
+    }
+
+    .about-icon-marquee::before,
+    .about-icon-marquee::after {
+        width: 70px;
+    }
+
+    .about-icon-marquee__group {
+        gap: 16px;
+        padding-inline: 16px;
+    }
+
+    .about-icon-marquee__group span {
+        width: 96px;
+        height: 96px;
+        border-radius: 24px;
+    }
+
+    .about-icon-marquee__group i,
+    .about-icon-marquee__group svg {
+        width: 52px;
+        height: 52px;
+    }
+}
+
+
+/* ==================================================
+   FIX: ABOUT ICON MARQUEE SOLID BACKGROUND
+================================================== */
+
+.about-icon-marquee {
+    background: #073A64;
+}
+
+/* убираем боковые блики/маски полностью */
+.about-icon-marquee::before,
+.about-icon-marquee::after {
+    display: none;
+    content: none;
+}
