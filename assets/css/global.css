@@ -358,7 +358,6 @@ main {
 
 .btn--ghost {
     color: var(--color-text);
-    background: transparent;
     border-color: var(--color-border);
 }
 

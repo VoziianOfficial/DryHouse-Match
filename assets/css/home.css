@@ -1011,3 +1011,43 @@
         max-width: 1180px;
     }
 }
+
+/* ==================================================
+   FIX: PLATFORM INTRO TITLE WIDE + 3 LINES
+================================================== */
+
+.platform-intro__statement {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto 34px;
+
+    /* меньше размер, но блок остается широкий */
+    font-size: clamp(2.35rem, 4.05vw, 4.05rem);
+    line-height: 1.04;
+    letter-spacing: -0.075em;
+
+    text-align: center;
+    text-wrap: balance;
+}
+
+@media (min-width: 1400px) {
+    .platform-intro__statement {
+        max-width: 1220px;
+        font-size: 4.05rem;
+    }
+}
+
+@media (max-width: 1180px) {
+    .platform-intro__statement {
+        max-width: 980px;
+        font-size: clamp(2.2rem, 5.2vw, 3.65rem);
+    }
+}
+
+@media (max-width: 720px) {
+    .platform-intro__statement {
+        max-width: 100%;
+        font-size: clamp(2rem, 9.5vw, 3.15rem);
+        line-height: 1.08;
+    }
+}
