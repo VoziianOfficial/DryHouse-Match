@@ -975,7 +975,7 @@ main {
 
 .shared-hero__photo-wrap {
     position: relative;
-    width: min(100%, 1180px);
+    width: min(100%, 1680px);
     margin-inline: auto;
 }
 
