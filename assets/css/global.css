@@ -868,17 +868,21 @@ main {
 
 .shared-hero__top {
     display: grid;
-    grid-template-columns: 0.95fr 1.15fr;
-    gap: 56px;
-    align-items: end;
-    margin-bottom: 34px;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 .shared-hero__nav {
     display: flex;
     flex-wrap: wrap;
     gap: 9px;
-    align-self: end;
+    order: 2;
+    justify-content: center;
+    align-self: center;
 }
 
 .hero-pill {
@@ -917,13 +921,17 @@ main {
 .shared-hero__content {
     display: grid;
     gap: 18px;
-    justify-items: end;
-    text-align: right;
+    order: 1;
+    justify-items: center;
+    width: min(100%, 1180px);
+    margin-inline: auto;
+    text-align: center;
 }
 
 .shared-hero__eyebrow {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     color: var(--color-red);
     font-size: 0.78rem;
@@ -940,11 +948,14 @@ main {
 }
 
 .shared-hero__title {
-    max-width: 780px;
+    max-width: 1120px;
+    margin-inline: auto;
     font-family: var(--font-heading);
-    font-size: clamp(2.35rem, 5vw, 5.65rem);
-    line-height: 0.98;
+    font-size: clamp(2.35rem, 4.4vw, 4.95rem);
+    line-height: 1.02;
     letter-spacing: -0.075em;
+    text-align: center;
+    text-wrap: balance;
     text-shadow: var(--shadow-text);
 }
 
@@ -953,9 +964,13 @@ main {
 }
 
 .shared-hero__text {
-    max-width: 700px;
+    max-width: 880px;
+    margin-inline: auto;
     color: var(--color-muted);
     font-size: clamp(1rem, 1.3vw, 1.12rem);
+    line-height: 1.6;
+    text-align: center;
+    text-wrap: balance;
 }
 
 .shared-hero__photo-wrap {
@@ -1623,15 +1638,18 @@ textarea.form-control {
     .shared-hero__top {
         grid-template-columns: 1fr;
         gap: 26px;
+        justify-items: center;
+        text-align: center;
     }
 
     .shared-hero__content {
-        justify-items: start;
-        text-align: left;
+        justify-items: center;
+        width: min(100%, 1120px);
+        text-align: center;
     }
 
     .shared-hero__title {
-        max-width: 820px;
+        max-width: 980px;
     }
 
     .shared-hero__photo {
@@ -1701,6 +1719,7 @@ textarea.form-control {
     .shared-hero__content {
         text-align: center;
         justify-items: center;
+        width: 100%;
     }
 
     .shared-hero__nav {
@@ -1708,11 +1727,13 @@ textarea.form-control {
     }
 
     .shared-hero__title {
-        font-size: clamp(2.05rem, 13vw, 3.6rem);
+        max-width: 100%;
+        font-size: clamp(2rem, 10vw, 3.45rem);
         text-align: center;
     }
 
     .shared-hero__text {
+        max-width: 100%;
         text-align: center;
     }
 
