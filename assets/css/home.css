@@ -613,7 +613,7 @@
 
 .platform-intro__photo {
     height: clamp(260px, 34vw, 440px);
-    border-radius: 34px 34px 0 0;
+    border-radius: 34px 34px 34px 34px;
 }
 
 .platform-stats {
@@ -1327,3 +1327,4 @@
         height: 42px;
     }
 }
+
