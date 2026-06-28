@@ -1046,6 +1046,10 @@
 }
 
 @media (max-width: 620px) {
+    .request-info__statement {
+        display: none;
+    }
+
     .request-prep {
         padding-top: 42px;
         padding-bottom: 46px;
