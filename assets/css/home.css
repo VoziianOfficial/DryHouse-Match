@@ -101,7 +101,7 @@
     grid-template-columns: minmax(0, 0.9fr) minmax(620px, 1.1fr);
     gap: 44px;
     align-items: center;
-    padding: 0;
+    padding: 96px 0 0;
     color: var(--color-text);
     background: transparent;
     overflow: visible;
