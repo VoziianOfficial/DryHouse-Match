@@ -1495,10 +1495,6 @@
         border-radius: 28px;
     }
 
-    /* если фото выезжает именно из-за AOS fade-left */
-    .services-intro__photos[data-aos] {
-        transform: none !important;
-    }
 }
 
 /* mobile */
@@ -1796,4 +1792,3 @@
         max-width: 680px;
     }
 }
-

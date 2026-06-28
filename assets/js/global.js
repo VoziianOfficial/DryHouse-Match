@@ -672,17 +672,28 @@
         counters.forEach((counter) => observer.observe(counter));
     };
 
-    const initLibraries = () => {
-        if (window.AOS) {
-            window.AOS.init({
-                duration: 760,
-                easing: 'ease-out-cubic',
-                once: true,
-                offset: 85,
-                disable: () => window.innerWidth < 420
-            });
-        }
+    const initSiteAnimations = () => {
+        if (!window.AOS) return;
 
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        window.AOS.init({
+            duration: 650,
+            easing: 'ease-out-cubic',
+            once: true,
+            mirror: false,
+            offset: 70,
+            delay: 0,
+            anchorPlacement: 'top-bottom',
+            disable: prefersReducedMotion
+        });
+
+        window.addEventListener('load', () => {
+            window.AOS.refresh();
+        }, { once: true });
+    };
+
+    const initLibraries = () => {
         if (window.lucide) {
             window.lucide.createIcons();
         }
@@ -724,6 +735,7 @@
         initFaqAccordions();
         initGenericAccordions();
         initCounters();
+        initSiteAnimations();
         initLibraries();
 
         window.addEventListener('resize', refreshDynamicHeights);

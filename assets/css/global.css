@@ -116,6 +116,7 @@ h6 {
 
 main {
     min-height: 60vh;
+    overflow-x: clip;
 }
 
 /* ==================================================
@@ -173,6 +174,14 @@ main {
 .section {
     position: relative;
     padding: 96px 0;
+    overflow-x: clip;
+}
+
+@media (max-width: 720px) {
+    [data-aos="fade-left"],
+    [data-aos="fade-right"] {
+        transform: translate3d(0, 18px, 0);
+    }
 }
 
 .section--soft {
