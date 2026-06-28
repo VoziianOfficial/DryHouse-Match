@@ -835,3 +835,266 @@
         height: 280px;
     }
 }
+
+/* ==================================================
+   FIX: ISSUE SELECTOR PLAIN LEFT BLOCK + COMPACT CARDS
+================================================== */
+
+/* вся сетка компактнее */
+.issue-selector__grid {
+    grid-template-columns: minmax(420px, 0.95fr) minmax(0, 1.05fr);
+    gap: 36px;
+    align-items: center;
+}
+
+/* левый блок больше НЕ карточка */
+.issue-selector__visual {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    min-height: 0;
+    overflow: visible;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+/* фото просто как отдельное фото */
+.issue-selector__photo {
+    height: clamp(330px, 34vw, 470px);
+    min-height: 0;
+    border-radius: 30px;
+    border: 0;
+}
+
+.issue-selector__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* текст и кнопка просто под фото, без карточки */
+.issue-selector__caption {
+    display: grid;
+    gap: 12px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+
+.issue-selector__caption h3 {
+    max-width: 620px;
+}
+
+.issue-selector__caption p {
+    max-width: 660px;
+}
+
+/* правые карточки ниже и плотнее */
+.issue-selector__cards {
+    align-content: center;
+    gap: 10px;
+}
+
+.issue-card {
+    min-height: 78px;
+    padding: 13px 16px;
+    gap: 12px;
+    border-radius: 18px;
+    border-bottom-width: 3px;
+}
+
+.issue-card::after {
+    left: 16px;
+    bottom: 9px;
+    width: 40px;
+    height: 2px;
+}
+
+.issue-card:hover::after,
+.issue-card.is-active::after {
+    width: calc(100% - 32px);
+}
+
+.issue-card i,
+.issue-card svg {
+    width: 32px;
+    height: 32px;
+}
+
+.issue-card strong {
+    margin-bottom: 3px;
+    font-size: 0.96rem;
+}
+
+.issue-card small {
+    font-size: 0.78rem;
+    line-height: 1.35;
+}
+
+/* tablet */
+@media (max-width: 1200px) {
+    .issue-selector__grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .issue-selector__visual {
+        max-width: 900px;
+        margin-inline: auto;
+    }
+
+    .issue-selector__cards {
+        max-width: 900px;
+        margin-inline: auto;
+    }
+}
+
+/* mobile */
+@media (max-width: 720px) {
+    .issue-selector__photo {
+        height: 280px;
+        border-radius: 24px;
+    }
+
+    .issue-card {
+        min-height: 82px;
+        padding: 14px 16px;
+    }
+}
+
+@media (max-width: 460px) {
+    .issue-card {
+        min-height: 0;
+        padding: 16px;
+    }
+
+    .issue-card::after {
+        bottom: 10px;
+    }
+}
+
+/* ==================================================
+   FIX: ISSUE SELECTOR CAPTION ABOVE CARDS
+================================================== */
+
+.issue-selector__grid {
+    grid-template-columns: minmax(420px, 0.92fr) minmax(0, 1.08fr);
+    gap: 36px;
+    align-items: center;
+}
+
+/* слева теперь только фото */
+.issue-selector__visual {
+    display: block;
+    min-height: 0;
+    overflow: visible;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+.issue-selector__photo {
+    height: clamp(390px, 42vw, 560px);
+    min-height: 0;
+    border: 0;
+    border-radius: 30px;
+}
+
+/* правая колонка: сверху текст, снизу карточки */
+.issue-selector__side {
+    display: grid;
+    gap: 18px;
+    align-content: center;
+}
+
+/* caption теперь отдельный верхний текстовый блок над карточками */
+.issue-selector__caption {
+    display: grid;
+    gap: 10px;
+    padding: 0 0 8px;
+    background: transparent;
+    border: 0;
+}
+
+.issue-selector__caption h3 {
+    max-width: 720px;
+    font-size: clamp(1.75rem, 3vw, 3.25rem);
+}
+
+.issue-selector__caption p {
+    max-width: 760px;
+    color: var(--color-muted);
+    line-height: 1.56;
+}
+
+.issue-selector__caption .btn {
+    width: fit-content;
+    margin-top: 4px;
+}
+
+/* карточки под текстом, компактные */
+.issue-selector__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    align-content: start;
+}
+
+.issue-card {
+    min-height: 76px;
+    padding: 13px 16px;
+    gap: 12px;
+    border-radius: 18px;
+}
+
+.issue-card i,
+.issue-card svg {
+    width: 32px;
+    height: 32px;
+}
+
+.issue-card strong {
+    margin-bottom: 3px;
+    font-size: 0.96rem;
+}
+
+.issue-card small {
+    font-size: 0.78rem;
+    line-height: 1.35;
+}
+
+@media (max-width: 1200px) {
+    .issue-selector__grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .issue-selector__visual,
+    .issue-selector__side {
+        max-width: 900px;
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .issue-selector__caption {
+        text-align: center;
+        justify-items: center;
+    }
+}
+
+@media (max-width: 720px) {
+    .issue-selector__photo {
+        height: 280px;
+        border-radius: 24px;
+    }
+
+    .issue-selector__cards {
+        grid-template-columns: 1fr;
+    }
+
+    .issue-card {
+        min-height: 80px;
+    }
+}
+
