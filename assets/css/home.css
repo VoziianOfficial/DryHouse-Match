@@ -964,3 +964,50 @@
         min-height: 260px;
     }
 }
+/* ==================================================
+   FIX: HOME HERO WIDTH WITHOUT REDUCING TITLE SIZE
+================================================== */
+
+@media (min-width: 981px) {
+    .home-hero .shared-hero__content {
+        width: 100%;
+        max-width: 1500px;
+        margin-inline: auto;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .home-hero .shared-hero__title {
+        width: 100%;
+        max-width: min(1500px, 96vw);
+        margin-inline: auto;
+
+        /* возвращаем крупный размер, не уменьшаем */
+        font-size: clamp(2.35rem, 4.4vw, 4.95rem);
+
+        line-height: 1;
+        text-align: center;
+        text-wrap: balance;
+        white-space: nowrap;
+    }
+
+    .home-hero .shared-hero__text {
+        width: 100%;
+        max-width: 1120px;
+        margin-inline: auto;
+        text-align: center;
+        text-wrap: balance;
+    }
+
+    .home-hero .shared-hero__nav,
+    .home-hero .btn-row {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1300px) {
+    .home-hero .shared-hero__title {
+        white-space: normal;
+        max-width: 1180px;
+    }
+}
