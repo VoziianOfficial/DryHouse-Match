@@ -1206,3 +1206,20 @@
         padding-top: 28px;
     }
 }
+
+/* ==================================================
+   FIX: ABOUT PRIORITY HERO SMALL BORDERS
+================================================== */
+
+.about-priority__hero {
+    border: 1px solid rgba(99, 199, 255, 0.28);
+    border-radius: 18px;
+}
+
+.about-priority__hero img {
+    border-radius: inherit;
+}
+
+.about-priority__panel {
+    border-radius: 16px;
+}
