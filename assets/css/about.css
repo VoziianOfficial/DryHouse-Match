@@ -107,7 +107,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
-    margin-top: 58px;
+    margin-top: 96px;
 }
 
 .story-info-card {
@@ -1015,5 +1015,194 @@
     .about-priority__item::after {
         left: 22px;
         right: 22px;
+    }
+}
+
+/* ==================================================
+   PROVIDER CHOICE SECTION
+================================================== */
+
+.provider-choice {
+    background: var(--color-white);
+}
+
+.provider-choice__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(420px, 0.9fr);
+    gap: 68px;
+    align-items: center;
+}
+
+.provider-choice__content {
+    display: grid;
+    gap: 22px;
+    align-content: center;
+}
+
+.provider-choice__content .section-title {
+    max-width: 780px;
+    font-size: clamp(2.05rem, 4.3vw, 4.75rem);
+}
+
+.provider-choice__content .lead {
+    max-width: 720px;
+}
+
+.provider-choice__content .btn {
+    width: fit-content;
+}
+
+.provider-choice__photos {
+    position: relative;
+    min-height: 620px;
+}
+
+/* same photo style as platform-story, but separate classes */
+.provider-choice__photo {
+    position: absolute;
+    width: 68%;
+    height: 520px;
+    border-radius: 34px;
+    transition: transform 620ms ease, z-index 620ms ease, filter 620ms ease;
+}
+
+.provider-choice__photo--back {
+    left: 0;
+    top: 0;
+    z-index: 1;
+    filter: saturate(0.85) brightness(0.9);
+}
+
+.provider-choice__photo--front {
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+/* hover / js swap */
+.provider-choice__photos:hover .provider-choice__photo--front,
+.provider-choice__photos.is-swapped .provider-choice__photo--front {
+    transform: translate(-42%, -18%) scale(0.94);
+    z-index: 1;
+    filter: saturate(0.85) brightness(0.9);
+}
+
+.provider-choice__photos:hover .provider-choice__photo--back,
+.provider-choice__photos.is-swapped .provider-choice__photo--back {
+    transform: translate(42%, 18%) scale(1.03);
+    z-index: 3;
+    filter: saturate(1) brightness(1);
+}
+
+/* decorative corner */
+.provider-choice__photos::before {
+    content: "";
+    position: absolute;
+    right: 36px;
+    top: 44px;
+    width: 120px;
+    height: 120px;
+    z-index: 4;
+    border-top: 4px solid var(--color-blue);
+    border-right: 4px solid var(--color-red);
+    border-radius: 0 26px 0 0;
+    pointer-events: none;
+}
+
+/* decorative line */
+.provider-choice__photos::after {
+    content: "";
+    position: absolute;
+    left: 28px;
+    bottom: 46px;
+    width: 140px;
+    height: 4px;
+    z-index: 4;
+    background: linear-gradient(90deg, var(--color-red), var(--color-blue));
+    border-radius: 999px;
+    pointer-events: none;
+}
+
+/* Tablet */
+@media (max-width: 1180px) {
+    .provider-choice__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .provider-choice__content {
+        text-align: center;
+        justify-items: center;
+    }
+
+    .provider-choice__photos {
+        width: min(100%, 760px);
+        margin-inline: auto;
+    }
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+    .provider-choice__photos {
+        min-height: 500px;
+    }
+
+    .provider-choice__photo {
+        width: 74%;
+        height: 420px;
+        border-radius: 26px;
+    }
+
+    .provider-choice__photos:hover .provider-choice__photo--front,
+    .provider-choice__photos.is-swapped .provider-choice__photo--front {
+        transform: translate(-22%, -12%) scale(0.94);
+    }
+
+    .provider-choice__photos:hover .provider-choice__photo--back,
+    .provider-choice__photos.is-swapped .provider-choice__photo--back {
+        transform: translate(22%, 12%) scale(1.02);
+    }
+
+    .provider-choice__content .section-title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .provider-choice__photos {
+        min-height: 390px;
+    }
+
+    .provider-choice__photo {
+        width: 78%;
+        height: 330px;
+    }
+
+    .provider-choice__photos::before {
+        right: 18px;
+        top: 30px;
+        width: 76px;
+        height: 76px;
+    }
+
+    .provider-choice__photos::after {
+        left: 18px;
+        bottom: 34px;
+        width: 90px;
+    }
+}
+
+/* ==================================================
+   FIX: PROVIDER CHOICE TOP PADDING
+================================================== */
+
+.provider-choice {
+    padding-top: clamp(34px, 4vw, 48px);
+}
+
+/* если нужно ещё компактнее на мобилке */
+@media (max-width: 720px) {
+    .provider-choice {
+        padding-top: 28px;
     }
 }
