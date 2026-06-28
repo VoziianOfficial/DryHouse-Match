@@ -1,0 +1,39 @@
+<svg width="320" height="220" viewBox="0 0 320 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DryHouse Match logo">
+  <defs>
+    <linearGradient id="dryhouseBlue" x1="40" y1="30" x2="280" y2="185" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0C6FD1"/>
+      <stop offset="55%" stop-color="#189BFF"/>
+      <stop offset="100%" stop-color="#63C7FF"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M62 118L143 42C153 32 167 32 177 42L228 93V58C228 51 233 46 240 46H252C259 46 264 51 264 58V128"
+     stroke="url(#dryhouseBlue)"
+     stroke-width="10"
+     stroke-linecap="round"
+     stroke-linejoin="round"/>
+
+  <rect x="136" y="92" width="16" height="16" rx="3" fill="#D92B2B"/>
+  <rect x="166" y="92" width="16" height="16" rx="3" fill="#D92B2B"/>
+
+  <rect x="141" y="97" width="4" height="4" rx="1" fill="white"/>
+  <rect x="171" y="97" width="4" height="4" rx="1" fill="white"/>
+
+  <path d="M48 132C66 132 76 120 92 120C111 120 121 132 140 132C160 132 169 120 189 120C208 120 218 132 238 132C255 132 266 132 278 132"
+     stroke="url(#dryhouseBlue)"
+     stroke-width="10"
+     stroke-linecap="round"
+     stroke-linejoin="round"/>
+
+  <path d="M48 162C66 162 78 150 96 150C115 150 127 162 146 162C165 162 177 150 196 150C215 150 227 162 246 162C260 162 270 162 278 162"
+     stroke="url(#dryhouseBlue)"
+     stroke-width="10"
+     stroke-linecap="round"
+     stroke-linejoin="round"/>
+
+  <path d="M48 192C66 192 80 180 98 180C118 180 130 192 149 192C169 192 182 180 202 180C221 180 234 192 253 192C265 192 273 192 278 192"
+     stroke="url(#dryhouseBlue)"
+     stroke-width="10"
+     stroke-linecap="round"
+     stroke-linejoin="round"/>
+</svg>
