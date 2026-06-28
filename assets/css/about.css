@@ -1160,3 +1160,43 @@
 .about-priority__panel {
     border-radius: 16px;
 }
+
+@media (max-width: 980px) {
+    .about-faq.section.section--soft .faq-question {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: start;
+        gap: 14px;
+        padding-right: 68px;
+    }
+
+    .about-faq.section.section--soft .faq-title {
+        padding-right: 0;
+    }
+
+    .about-faq.section.section--soft .faq-icon {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        z-index: 3;
+        width: 34px;
+        height: 34px;
+        flex: 0 0 auto;
+        margin: 0;
+    }
+}
+
+@media (max-width: 620px) {
+    .about-faq.section.section--soft .faq-question {
+        gap: 10px;
+        padding-right: 54px;
+    }
+
+    .about-faq.section.section--soft .faq-icon {
+        top: 14px;
+        right: 14px;
+        width: 30px;
+        height: 30px;
+    }
+}
