@@ -1,14 +1,6 @@
-/* ==================================================
-   SERVICES HERO
-================================================== */
-
 .services-hero .shared-hero__title {
     max-width: 1100px;
 }
-
-/* ==================================================
-   SERVICES INTRO
-================================================== */
 
 .services-intro {
     background: var(--color-white);
@@ -173,10 +165,6 @@
     color: var(--color-white);
 }
 
-/* ==================================================
-   FULL SERVICE CATEGORY GRID / ACCORDION
-================================================== */
-
 .service-grid-section {
     overflow: hidden;
 }
@@ -293,10 +281,6 @@
     font-size: 1rem;
     line-height: 1.68;
 }
-
-/* ==================================================
-   ISSUE SELECTOR
-================================================== */
 
 .issue-selector {
     background:
@@ -438,10 +422,6 @@
     line-height: 1.48;
 }
 
-/* ==================================================
-   PROVIDER CHOICE FACTORS
-================================================== */
-
 .choice-factors {
     min-height: 560px;
     color: var(--color-white);
@@ -540,10 +520,6 @@
     line-height: 1.55;
 }
 
-/* ==================================================
-   SERVICES FAQ
-================================================== */
-
 .services-faq__head {
     margin-bottom: 34px;
     text-align: center;
@@ -570,10 +546,6 @@
 .services-faq__disclaimer {
     margin-top: 22px;
 }
-
-/* ==================================================
-   FIX: SERVICES FAQ ICON TOP RIGHT ON TABLET/MOBILE
-================================================== */
 
 @media (max-width: 980px) {
     .services-faq.section.section--soft .faq-question {
@@ -614,10 +586,6 @@
         height: 30px;
     }
 }
-
-/* ==================================================
-   RESPONSIVE
-================================================== */
 
 @media (max-width: 1200px) {
 
@@ -809,10 +777,6 @@
     }
 }
 
-/* ==================================================
-   FIX: SERVICES INTRO PHOTOS WIDTH + SMALLER GAP
-================================================== */
-
 .services-intro__main {
     grid-template-columns: minmax(0, 0.88fr) minmax(560px, 1.12fr);
     gap: 36px;
@@ -840,7 +804,6 @@
     object-fit: cover;
 }
 
-/* tablet */
 @media (max-width: 1180px) {
     .services-intro__main {
         grid-template-columns: 1fr;
@@ -858,7 +821,6 @@
     }
 }
 
-/* mobile */
 @media (max-width: 720px) {
     .services-intro__photos {
         gap: 10px;
@@ -880,18 +842,12 @@
     }
 }
 
-/* ==================================================
-   FIX: ISSUE SELECTOR PLAIN LEFT BLOCK + COMPACT CARDS
-================================================== */
-
-/* вся сетка компактнее */
 .issue-selector__grid {
     grid-template-columns: minmax(420px, 0.95fr) minmax(0, 1.05fr);
     gap: 36px;
     align-items: center;
 }
 
-/* левый блок больше НЕ карточка */
 .issue-selector__visual {
     display: grid;
     grid-template-rows: auto auto;
@@ -903,7 +859,6 @@
     border-radius: 0;
 }
 
-/* фото просто как отдельное фото */
 .issue-selector__photo {
     height: clamp(330px, 34vw, 470px);
     min-height: 0;
@@ -917,7 +872,6 @@
     object-fit: cover;
 }
 
-/* текст и кнопка просто под фото, без карточки */
 .issue-selector__caption {
     display: grid;
     gap: 12px;
@@ -934,7 +888,6 @@
     max-width: 660px;
 }
 
-/* правые карточки ниже и плотнее */
 .issue-selector__cards {
     align-content: center;
     gap: 10px;
@@ -976,7 +929,6 @@
     line-height: 1.35;
 }
 
-/* tablet */
 @media (max-width: 1200px) {
     .issue-selector__grid {
         grid-template-columns: 1fr;
@@ -994,7 +946,6 @@
     }
 }
 
-/* mobile */
 @media (max-width: 720px) {
     .issue-selector__photo {
         height: 280px;
@@ -1018,17 +969,12 @@
     }
 }
 
-/* ==================================================
-   FIX: ISSUE SELECTOR CAPTION ABOVE CARDS
-================================================== */
-
 .issue-selector__grid {
     grid-template-columns: minmax(420px, 0.92fr) minmax(0, 1.08fr);
     gap: 36px;
     align-items: center;
 }
 
-/* слева теперь только фото */
 .issue-selector__visual {
     display: block;
     min-height: 0;
@@ -1045,14 +991,12 @@
     border-radius: 30px;
 }
 
-/* правая колонка: сверху текст, снизу карточки */
 .issue-selector__side {
     display: grid;
     gap: 18px;
     align-content: center;
 }
 
-/* caption теперь отдельный верхний текстовый блок над карточками */
 .issue-selector__caption {
     display: grid;
     gap: 10px;
@@ -1077,7 +1021,6 @@
     margin-top: 4px;
 }
 
-/* карточки под текстом, компактные */
 .issue-selector__cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1142,10 +1085,6 @@
     }
 }
 
-/* ==================================================
-   MOBILE FIX: ISSUE SELECTOR COMPACT BEAUTIFUL LAYOUT
-================================================== */
-
 @media (max-width: 720px) {
     .issue-selector {
         padding-top: 42px;
@@ -1173,7 +1112,6 @@
         margin-inline: auto;
     }
 
-    /* фото короткое и широкое */
     .issue-selector__visual {
         display: block;
         width: 100%;
@@ -1198,7 +1136,6 @@
             linear-gradient(120deg, rgba(7, 58, 100, 0.22), transparent 46%);
     }
 
-    /* правая часть становится общей колонкой под фото */
     .issue-selector__side {
         position: relative;
         z-index: 4;
@@ -1208,7 +1145,6 @@
         margin: -34px auto 0;
     }
 
-    /* выбранный текст — компактная плашка поверх фото */
     .issue-selector__caption {
         display: grid;
         justify-items: center;
@@ -1249,7 +1185,6 @@
         font-size: 0.78rem;
     }
 
-    /* карточки компактными плитками 2 в ряд */
     .issue-selector__cards {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1373,10 +1308,6 @@
     }
 }
 
-/* ==================================================
-   FIX: ISSUE SELECTOR MOBILE PHOTO INSIDE CONTAINER
-================================================== */
-
 @media (max-width: 720px) {
     .issue-selector .container-wide {
         overflow: hidden;
@@ -1436,10 +1367,6 @@
     }
 }
 
-/* ==================================================
-   FIX: SERVICES INTRO PHOTOS INSIDE CONTAINER
-================================================== */
-
 .services-intro {
     overflow: hidden;
 }
@@ -1473,7 +1400,6 @@
     object-fit: cover;
 }
 
-/* tablet */
 @media (max-width: 1180px) {
     .services-intro__main {
         grid-template-columns: 1fr;
@@ -1497,7 +1423,6 @@
 
 }
 
-/* mobile */
 @media (max-width: 720px) {
     .services-intro__photos {
         grid-template-columns: 1fr;
@@ -1527,10 +1452,6 @@
     }
 }
 
-/* ==================================================
-   FIX: SERVICES INTRO PHOTOS SAME LEVEL ON TABLET
-================================================== */
-
 @media (min-width: 721px) and (max-width: 1180px) {
     .services-intro__photo:nth-child(2) {
         transform: none !important;
@@ -1545,10 +1466,6 @@
     }
 }
 
-
-/* ==================================================
-   REQUEST READY CHECKLIST
-================================================== */
 
 .request-ready {
     overflow: hidden;
@@ -1668,7 +1585,6 @@
     color: var(--color-blue-dark);
 }
 
-/* tablet */
 @media (max-width: 980px) {
     .request-ready__head {
         grid-template-columns: 1fr;
@@ -1696,7 +1612,6 @@
     }
 }
 
-/* mobile */
 @media (max-width: 620px) {
     .request-ready {
         padding-top: 42px;
@@ -1757,10 +1672,6 @@
     }
 }
 
-/* ==================================================
-   FIX: REQUEST READY TITLE WIDER
-================================================== */
-
 .request-ready__head {
     grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.55fr);
     gap: clamp(24px, 4vw, 52px);
@@ -1777,7 +1688,6 @@
     max-width: 430px;
 }
 
-/* tablet */
 @media (max-width: 980px) {
     .request-ready__head {
         grid-template-columns: 1fr;

@@ -1,14 +1,6 @@
-/* ==================================================
-   CONTACT HERO
-================================================== */
-
 .contact-hero .shared-hero__title {
     max-width: 1100px;
 }
-
-/* ==================================================
-   REQUEST INFO
-================================================== */
 
 .request-info {
     background: var(--color-white);
@@ -119,10 +111,6 @@
     color: var(--color-muted);
     line-height: 1.62;
 }
-
-/* ==================================================
-   MAIN CONTACT / REQUEST FORM
-================================================== */
 
 .request-form-section {
     color: var(--color-white);
@@ -267,10 +255,6 @@
     overflow: hidden;
 }
 
-/* ==================================================
-   WHAT HAPPENS AFTER YOU SUBMIT
-================================================== */
-
 .after-submit {
     background: var(--color-white);
 }
@@ -357,10 +341,6 @@
     font-size: 0.88rem;
     line-height: 1.48;
 }
-
-/* ==================================================
-   CONTACT NUMBERS + PROBLEM SLIDER
-================================================== */
 
 .contact-numbers {
     padding: 0;
@@ -560,10 +540,6 @@
     border-radius: 999px;
 }
 
-/* ==================================================
-   CONTACT FAQ
-================================================== */
-
 .contact-faq__head {
     margin-bottom: 34px;
     text-align: center;
@@ -590,10 +566,6 @@
 .contact-faq__disclaimer {
     margin-top: 22px;
 }
-
-/* ==================================================
-   RESPONSIVE
-================================================== */
 
 @media (max-width: 1200px) {
 
@@ -778,10 +750,6 @@
 }
 
 
-/* ==================================================
-   FIX: CONTACT HERO WIDTH WITHOUT REDUCING TITLE SIZE
-================================================== */
-
 @media (min-width: 981px) {
     .contact-hero .shared-hero__content {
         width: 100%;
@@ -796,7 +764,6 @@
         max-width: min(1500px, 96vw);
         margin-inline: auto;
 
-        /* возвращаем крупный размер, не уменьшаем */
         font-size: clamp(2.35rem, 4.4vw, 4.95rem);
 
         line-height: 1;
@@ -825,10 +792,6 @@
         max-width: 1180px;
     }
 }
-
-/* ==================================================
-   REQUEST PREP — BLUE WHITE SECTION
-================================================== */
 
 .request-prep {
     position: relative;
@@ -930,7 +893,6 @@
     background: var(--color-blue);
 }
 
-/* справа прозрачные горизонтальные карточки */
 .request-prep__cards {
     display: grid;
     gap: 14px;
@@ -1058,7 +1020,6 @@
     color: var(--color-blue-dark);
 }
 
-/* tablet */
 @media (max-width: 1080px) {
     .request-prep__grid {
         grid-template-columns: 1fr;
@@ -1084,7 +1045,6 @@
     }
 }
 
-/* mobile */
 @media (max-width: 620px) {
     .request-prep {
         padding-top: 42px;

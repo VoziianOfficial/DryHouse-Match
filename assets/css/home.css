@@ -1,7 +1,3 @@
-/* ==================================================
-   HOMEPAGE HERO
-================================================== */
-
 .home-hero .shared-hero__title {
     max-width: 1120px;
 }
@@ -9,12 +5,6 @@
 .home-hero .shared-hero__photo {
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
-
-/* ==================================================
-   QUICK DAMAGE TYPE NAVIGATION
-================================================== */
-
-
 
 .quick-damage__top {
     display: grid;
@@ -453,10 +443,6 @@
     }
 }
 
-/* ==================================================
-   POPULAR WATER DAMAGE CATEGORIES
-================================================== */
-
 .popular-categories {
     overflow: hidden;
 }
@@ -585,10 +571,6 @@
     border-color: var(--color-white);
 }
 
-/* ==================================================
-   PLATFORM INTRO
-================================================== */
-
 .platform-intro {
     background: var(--color-white);
 }
@@ -658,10 +640,6 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
-
-/* ==================================================
-   HOW DRYHOUSE MATCH WORKS
-================================================== */
 
 .how-works {
     overflow: hidden;
@@ -782,10 +760,6 @@
     transform: translateY(0);
 }
 
-/* ==================================================
-   TRUST CLARITY
-================================================== */
-
 .trust-clarity {
     background:
         linear-gradient(90deg, #FFFFFF 0 62%, #F5F8FC 62% 100%);
@@ -857,10 +831,6 @@
         linear-gradient(120deg, rgba(24, 155, 255, 0.16), transparent 34%);
 }
 
-/* ==================================================
-   HOME FAQ
-================================================== */
-
 .home-faq__head {
     margin-bottom: 34px;
     text-align: center;
@@ -885,10 +855,6 @@
     max-width: 980px;
     margin: 22px auto 0;
 }
-
-/* ==================================================
-   RESPONSIVE
-================================================== */
 
 @media (max-width: 1180px) {
     .quick-damage__top {
@@ -1089,10 +1055,6 @@
         min-height: 260px;
     }
 }
-/* ==================================================
-   FIX: HOME HERO WIDTH WITHOUT REDUCING TITLE SIZE
-================================================== */
-
 @media (min-width: 981px) {
     .home-hero .shared-hero__content {
         width: 100%;
@@ -1107,7 +1069,6 @@
         max-width: min(1500px, 96vw);
         margin-inline: auto;
 
-        /* возвращаем крупный размер, не уменьшаем */
         font-size: clamp(2.35rem, 4.4vw, 4.95rem);
 
         line-height: 1;
@@ -1137,16 +1098,11 @@
     }
 }
 
-/* ==================================================
-   FIX: PLATFORM INTRO TITLE WIDE + 3 LINES
-================================================== */
-
 .platform-intro__statement {
     width: 100%;
     max-width: 1180px;
     margin: 0 auto 34px;
 
-    /* меньше размер, но блок остается широкий */
     font-size: clamp(2.35rem, 4.05vw, 4.05rem);
     line-height: 1.04;
     letter-spacing: -0.075em;
@@ -1176,10 +1132,6 @@
         line-height: 1.08;
     }
 }
-
-/* ==================================================
-   QUICK DAMAGE ICON STRIP
-================================================== */
 
 .quick-damage-icons {
     position: relative;
@@ -1324,10 +1276,6 @@
         height: 42px;
     }
 }
-
-/* ==================================================
-   REQUEST CLARITY SECTION
-================================================== */
 
 .request-clarity {
     background: #f5f8fc;
@@ -1515,10 +1463,6 @@
         border-radius: 22px;
     }
 }
-
-/* ==================================================
-   COMPARE MARKERS STRIP
-================================================== */
 
 .compare-markers {
     padding: clamp(34px, 5vw, 58px) 0;

@@ -29,10 +29,6 @@
     --shadow-text: 1px 1px 0 rgba(24, 155, 255, 0.22), 2px 2px 0 rgba(217, 43, 43, 0.1);
 }
 
-/* ==================================================
-   RESET
-================================================== */
-
 *,
 *::before,
 *::after {
@@ -119,10 +115,6 @@ main {
     overflow-x: clip;
 }
 
-/* ==================================================
-   ACCESSIBILITY
-================================================== */
-
 .skip-link {
     position: fixed;
     top: 12px;
@@ -156,10 +148,6 @@ main {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
-
-/* ==================================================
-   LAYOUT HELPERS
-================================================== */
 
 .container {
     width: min(100% - 32px, var(--container));
@@ -265,10 +253,6 @@ main {
 .dark-lead {
     color: rgba(255, 255, 255, 0.72);
 }
-
-/* ==================================================
-   BUTTONS
-================================================== */
 
 .btn {
     position: relative;
@@ -389,10 +373,6 @@ main {
     flex-wrap: wrap;
     gap: 12px;
 }
-
-/* ==================================================
-   HEADER / PRE-HEADER
-================================================== */
 
 .site-header {
     position: sticky;
@@ -717,10 +697,6 @@ main {
     transform: rotate(-45deg);
 }
 
-/* ==================================================
-   MOBILE MENU
-================================================== */
-
 .mobile-menu {
     position: fixed;
     inset: 0;
@@ -845,10 +821,6 @@ main {
     gap: 8px;
     margin-top: 18px;
 }
-
-/* ==================================================
-   SHARED HERO
-================================================== */
 
 .shared-hero {
     position: relative;
@@ -1036,10 +1008,6 @@ main {
     pointer-events: none;
 }
 
-/* ==================================================
-   SHARED CTA
-================================================== */
-
 .shared-cta {
     position: relative;
     isolation: isolate;
@@ -1101,10 +1069,6 @@ main {
     justify-content: flex-end;
     gap: 10px;
 }
-
-/* ==================================================
-   FOOTER
-================================================== */
 
 .site-footer {
     color: var(--color-white);
@@ -1248,10 +1212,6 @@ main {
     gap: 14px;
 }
 
-/* ==================================================
-   FORMS BASE
-================================================== */
-
 .form-grid {
     display: grid;
     gap: 14px;
@@ -1370,10 +1330,6 @@ textarea.form-control {
     border: 1px solid #F2B1B1;
 }
 
-/* ==================================================
-   FAQ ACCORDION BASE
-================================================== */
-
 .faq-block {
     display: grid;
     gap: 12px;
@@ -1468,10 +1424,6 @@ textarea.form-control {
     line-height: 1.65;
 }
 
-/* ==================================================
-   PHOTO / CARD UTILITIES
-================================================== */
-
 .image-frame {
     position: relative;
     overflow: hidden;
@@ -1530,10 +1482,6 @@ textarea.form-control {
     transform: translateY(-3px);
 }
 
-/* ==================================================
-   COOKIE BANNER
-================================================== */
-
 .cookie-banner {
     position: fixed;
     left: 18px;
@@ -1580,10 +1528,6 @@ textarea.form-control {
     gap: 8px;
 }
 
-/* ==================================================
-   LEGAL / DISCLAIMER BOX BASE
-================================================== */
-
 .disclaimer-box {
     padding: 20px;
     color: var(--color-text);
@@ -1594,10 +1538,6 @@ textarea.form-control {
     font-size: 0.92rem;
     line-height: 1.7;
 }
-
-/* ==================================================
-   RESPONSIVE
-================================================== */
 
 @media (max-width: 1180px) {
     .main-header__inner {
@@ -1853,10 +1793,6 @@ textarea.form-control {
     }
 }
 
-/* ==================================================
-   REAL FIX: FIXED HEADER
-================================================== */
-
 html {
     scroll-padding-top: 132px;
 }
@@ -1865,7 +1801,6 @@ body {
     padding-top: 116px;
 }
 
-/* внешний header, который есть в HTML */
 header[data-site-header],
 [data-site-header] {
     position: fixed !important;
@@ -1876,7 +1811,6 @@ header[data-site-header],
     width: 100% !important;
 }
 
-/* внутренний header, который создается через JS */
 [data-site-header] .site-header {
     position: relative !important;
     top: auto !important;
@@ -1886,23 +1820,19 @@ header[data-site-header],
     width: 100% !important;
 }
 
-/* чтобы сам блок не был прозрачным */
 [data-site-header] .pre-header,
 [data-site-header] .main-header {
     width: 100%;
 }
 
-/* тень при скролле */
 [data-site-header] .site-header.is-scrolled .main-header {
     box-shadow: 0 18px 40px rgba(11, 11, 13, 0.12);
 }
 
-/* mobile menu должен быть ниже fixed-header */
 .mobile-menu {
     z-index: 980;
 }
 
-/* cookie выше всего, но ниже skip-link */
 .cookie-banner {
     z-index: 9998;
 }

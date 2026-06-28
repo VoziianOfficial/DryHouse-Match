@@ -1,14 +1,6 @@
-/* ==================================================
-   SERVICE HERO
-================================================== */
-
 .service-hero .shared-hero__title {
     max-width: 1100px;
 }
-
-/* ==================================================
-   SERVICE PREVIEW
-================================================== */
 
 .service-preview {
     background: var(--color-white);
@@ -79,10 +71,6 @@
     text-transform: uppercase;
 }
 
-/* ==================================================
-   SERVICE OVERVIEW
-================================================== */
-
 .service-overview__grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(390px, 0.78fr);
@@ -152,10 +140,6 @@
         linear-gradient(120deg, rgba(24, 155, 255, 0.14), transparent 34%);
 }
 
-/* ==================================================
-   COMPARISON FACTORS
-================================================== */
-
 .comparison-factors {
     background: var(--color-white);
 }
@@ -223,10 +207,6 @@
     line-height: 1.62;
 }
 
-/* ==================================================
-   WARNING SIGNS
-================================================== */
-
 .warning-signs {
     position: relative;
     overflow: hidden;
@@ -251,7 +231,6 @@
     z-index: 2;
 }
 
-/* header */
 .warning-signs__head {
     display: grid;
     justify-items: center;
@@ -277,7 +256,6 @@
     text-wrap: balance;
 }
 
-/* whole switcher */
 .warning-switcher {
     display: grid;
     grid-template-columns: 1fr;
@@ -285,7 +263,6 @@
     width: 100%;
 }
 
-/* cards row */
 .warning-switcher__cards {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -296,7 +273,6 @@
     align-items: stretch;
 }
 
-/* clean horizontal cards */
 .warning-card {
     position: relative;
     display: flex !important;
@@ -409,7 +385,6 @@
     transform: translateY(-4px) rotate(-4deg);
 }
 
-/* visual block: one centered width for photo + text */
 .warning-switcher__visual {
     display: grid;
     grid-template-columns: 1fr;
@@ -423,7 +398,6 @@
     overflow: visible;
 }
 
-/* wide centered photo */
 .warning-switcher__photo {
     display: block;
     width: 100%;
@@ -455,7 +429,6 @@
     filter: contrast(1.05) saturate(1.06);
 }
 
-/* separate text panel exactly same width as photo */
 .warning-switcher__text {
     display: grid;
     grid-template-columns: minmax(260px, 0.38fr) minmax(0, 0.62fr);
@@ -489,7 +462,6 @@
     line-height: 1.52;
 }
 
-/* tablet */
 @media (max-width: 1080px) {
     .warning-switcher__cards,
     .warning-switcher__visual {
@@ -529,7 +501,6 @@
     }
 }
 
-/* mobile */
 @media (max-width: 620px) {
     .warning-signs__head {
         margin-bottom: 24px;
@@ -584,10 +555,6 @@
         line-height: 1.46;
     }
 }
-
-/* ==================================================
-   MATCHING STEPS
-================================================== */
 
 .matching-steps {
     background: var(--color-white);
@@ -675,10 +642,6 @@
     line-height: 1.48;
 }
 
-/* ==================================================
-   SERVICE FAQ
-================================================== */
-
 .service-faq__head {
     margin-bottom: 34px;
     text-align: center;
@@ -705,10 +668,6 @@
 .service-faq__disclaimer {
     margin-top: 22px;
 }
-
-/* ==================================================
-   RESPONSIVE
-================================================== */
 
 @media (max-width: 1200px) {
 
@@ -843,10 +802,6 @@
 }
 
 
-/* ==================================================
-   CATEGORY FIT GUIDE
-================================================== */
-
 .category-fit {
     position: relative;
     overflow: hidden;
@@ -934,7 +889,6 @@
     background: var(--color-blue);
 }
 
-/* правая часть — не карточки, а чистые колонки со строками */
 .category-fit__board {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1036,7 +990,6 @@
     line-height: 1.5;
 }
 
-/* tablet */
 @media (max-width: 1080px) {
     .category-fit__grid {
         grid-template-columns: 1fr;
@@ -1062,7 +1015,6 @@
     }
 }
 
-/* mobile */
 @media (max-width: 720px) {
     .category-fit {
         padding-top: 46px;

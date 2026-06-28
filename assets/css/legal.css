@@ -1,7 +1,3 @@
-/* ==================================================
-   LEGAL HERO
-================================================== */
-
 .legal-hero .shared-hero__title {
     max-width: 1050px;
 }
@@ -9,10 +5,6 @@
 .legal-hero .shared-hero__text {
     max-width: 860px;
 }
-
-/* ==================================================
-   LEGAL TOP NAV
-================================================== */
 
 .legal-nav-section {
     position: relative;
@@ -56,10 +48,6 @@
     border-bottom-color: var(--color-red-light);
     transform: translateY(-3px);
 }
-
-/* ==================================================
-   LEGAL CONTENT
-================================================== */
 
 .legal-content {
     background:
@@ -137,10 +125,6 @@
     color: var(--color-red);
 }
 
-/* ==================================================
-   LEGAL FEATURE LIST
-================================================== */
-
 .legal-feature-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -181,10 +165,6 @@
     line-height: 1.6;
 }
 
-/* ==================================================
-   LEGAL CONTACT LIST
-================================================== */
-
 .legal-contact-list {
     display: grid;
     gap: 10px;
@@ -221,10 +201,6 @@
     text-underline-offset: 4px;
 }
 
-/* ==================================================
-   LEGAL DISCLAIMER
-================================================== */
-
 .legal-disclaimer {
     margin-top: 10px;
     border-left-color: var(--color-red);
@@ -234,10 +210,6 @@
     color: var(--color-muted);
     line-height: 1.65;
 }
-
-/* ==================================================
-   RESPONSIVE
-================================================== */
 
 @media (max-width: 900px) {
     .legal-top-nav {
